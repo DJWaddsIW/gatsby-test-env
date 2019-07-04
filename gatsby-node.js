@@ -15,7 +15,7 @@ exports.createPages = ({ graphql, actions }) => {
         `
         query {
           dataApi {
-            listShops {
+            listShops(limit: 100000, nextToken: null) {
               items {
                 id
                 name
@@ -28,7 +28,6 @@ exports.createPages = ({ graphql, actions }) => {
         `
       ).then(result => {
         if (result.errors) {
-          console.log(result, 'dfghjfghjfghjfghjfghjdfghdfghfghjfghjdrfghjfghjfghjghjkfghjkfghjk')
           reject(result.errors)
         }
         const shops = result.data.dataApi.listShops.items;
