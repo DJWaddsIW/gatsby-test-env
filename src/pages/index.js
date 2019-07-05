@@ -22,7 +22,7 @@ const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="Home" />
     <Shops shops={data.dataApi.listShops.items} />
-    <Link to="/page-2/">Go to page 2</Link> 
+    <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 )
 
