@@ -7,7 +7,7 @@ import Shops from '../components/Shops'
 
 export const query = graphql`query getShops {
   dataApi {
-    listShops(limit: 100000, nextToken: null) {
+    listShops(limit: 200000, nextToken: null) {
       items {
         id
         name
