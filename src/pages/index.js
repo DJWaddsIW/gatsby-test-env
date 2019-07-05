@@ -18,12 +18,22 @@ export const query = graphql`query getShops {
   }
 }`;
 
-const IndexPage = ({ data }) => (
-  <Layout>
-    <SEO title="Home" />
-    <Shops shops={data.dataApi.listShops.items} />
-    <Link to="/page-2/">Go to page 2</Link>
-  </Layout>
-) 
+class IndexPage extends React.Component {
+  state = {
+    shops: this.props.data.dataApi.listShops.items,
+  }
+  render(){
+    const { shops, shopIndexer } = this.state
+    const { toggleShopList, nameChecker} = this;
+    return (
+      <Layout>
+        <SEO title="Home" />
+        <Shops shops={shops} />
+        <Link to="/page-2/">Go to page 2</Link>
+        <button onClick={nameChecker}>check names</button>
+      </Layout>
+    )
+  }
+}
 
 export default IndexPage

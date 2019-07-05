@@ -11,9 +11,9 @@ module.exports = {
       options: {
         typeName: 'Character',
         fieldName: 'dataApi',
-        url: 'https://aonz652ezncedpc7xnbvnwaq6q.appsync-api.eu-west-1.amazonaws.com/graphql',
+        url: 'https://jfe7g6nvpjgd5lwaq47cyfqxw4.appsync-api.eu-west-1.amazonaws.com/graphql',
         headers: {
-          'x-api-key': 'da2-e2efcinlwjh5hln4ficsxknkgu'
+          'x-api-key': 'da2-sui5ueptijgufdetxpos3widi4'
         }
       }
     },
