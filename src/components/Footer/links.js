@@ -4,7 +4,7 @@ export default [
     links: [
       {
         text: 'Frequently Asked Questions',
-        url: '/frequently-asked-questions',
+        url: '#',
       },
       { text: 'Price match', url: '#' },
       { text: 'Returns policy', url: '#' },

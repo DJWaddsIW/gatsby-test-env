@@ -23,14 +23,12 @@ class IndexPage extends React.Component {
     shops: this.props.data.dataApi.listShops.items,
   }
   render(){
-    const { shops, shopIndexer } = this.state
-    const { toggleShopList, nameChecker} = this;
+    const { shops } = this.state
     return (
       <Layout>
         <SEO title="Home" />
         <Shops shops={shops} />
         <Link to="/page-2/">Go to page 2</Link>
-        <button onClick={nameChecker}>check names</button>
       </Layout>
     )
   }
