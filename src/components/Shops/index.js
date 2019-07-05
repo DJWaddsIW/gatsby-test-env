@@ -3,7 +3,7 @@ import React from "react"
 
 const Shops = ({shops}) => (
   <div>
-    <p>There are {shops.length} in total.</p>
+    <p>There are {shops.length} total.</p>
     <div>
       {shops.map((shop) => {
         return <div key={shop.id}>
