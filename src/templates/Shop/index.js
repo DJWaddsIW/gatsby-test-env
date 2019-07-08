@@ -25,6 +25,6 @@ class Shop extends React.Component {
       <h1>{shop.name}</h1>
     </Layout>
   }
-} 
+}  
 
 export default Shop
