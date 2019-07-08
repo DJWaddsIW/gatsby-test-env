@@ -7,14 +7,18 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
-      resolve: 'gatsby-source-graphql',
+      resolve: "gatsby-source-custom-api",
       options: {
-        typeName: 'Character',
-        fieldName: 'dataApi',
-        url: 'https://jfe7g6nvpjgd5lwaq47cyfqxw4.appsync-api.eu-west-1.amazonaws.com/graphql',
-        headers: {
-          'x-api-key': 'da2-sui5ueptijgufdetxpos3widi4'
-        }
+          url: "http://localhost:9080/shops"
+      },
+      imageKeys: ["images"],
+      rootKey: "posts",
+      schemas: {
+        posts: `
+            id: String
+            name: String
+            logo: String
+        `,
       }
     },
     {

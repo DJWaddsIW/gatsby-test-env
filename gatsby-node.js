@@ -12,25 +12,19 @@ exports.createPages = ({ graphql, actions }) => {
     // Query for markdown nodes to use in creating pages.
     resolve(
       graphql(
-        `
-        query {
-          dataApi {
-            listShops(limit: 100000, nextToken: null) {
-              items {
-                id
-                name
-                logo
-                terminals
-              }
+        `query {
+          customApi {
+            shops {
+              id
+              name
             }
           }
-        }
-        `
+        }`
       ).then(result => {
         if (result.errors) {
           reject(result.errors)
         }
-        const shops = result.data.dataApi.listShops.items;
+        const shops = result.data.customApi.shops;
         shops.forEach((shop) => {
           const slug = `/shop/${shop.name}`
           createPage({
@@ -38,6 +32,7 @@ exports.createPages = ({ graphql, actions }) => {
             component: path.resolve('src/templates/Shop/index.js'),
             context: {
               id: shop.id,
+              name: shop.name
             },
           })
         })
